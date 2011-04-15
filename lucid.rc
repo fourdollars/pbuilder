@@ -4,7 +4,7 @@ export PATH="/usr/lib/ccache:${PATH}"
 EXTRAPACKAGES="${EXTRAPACKAGES} ccache pbuilder devscripts gnupg patchutils vim-tiny"
 BINDMOUNTS="${BINDMOUNTS} ${CCACHE_DIR}"
 
-MIRRORSITE=http://tw.archive.ubuntu.com/ubuntu/
+MIRRORSITE="http://tw.archive.ubuntu.com/ubuntu/"
 COMPONENTS="main restricted universe multiverse"
 DISTRIBUTION=lucid
 BASEPATH=/var/cache/pbuilder/lucid.cow
