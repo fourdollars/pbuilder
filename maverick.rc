@@ -1,0 +1,17 @@
+export CCACHE_DIR="/var/cache/ccache"
+export PATH="/usr/lib/ccache:${PATH}"
+
+EXTRAPACKAGES="${EXTRAPACKAGES} ccache pbuilder devscripts gnupg patchutils vim-tiny"
+BINDMOUNTS="${BINDMOUNTS} ${CCACHE_DIR}"
+
+MIRRORSITE=http://tw.archive.ubuntu.com/ubuntu/
+COMPONENTS="main restricted universe multiverse"
+DISTRIBUTION=maverick
+BASEPATH=/var/cache/pbuilder/maverick.cow
+
+#OTHERMIRROR="deb http://tw.archive.ubuntu.com/ubuntu/ maverick-security main restricted universe multiverse|deb http://tw.archive.ubuntu.com/ubuntu/ maverick-updates main restricted universe multiverse|deb http://tw.archive.ubuntu.com/ubuntu/ maverick-proposed main restricted universe multiverse|deb http://tw.archive.ubuntu.com/ubuntu/ maverick-backports main restricted universe multiverse"
+
+PDEBUILD_PBUILDER=cowbuilder
+#export DEB_BUILD_OPTIONS="nostrip"
+
+BUILDRESULT=~/pbuilder/deb/

@@ -1,0 +1,17 @@
+export CCACHE_DIR="/var/cache/ccache"
+export PATH="/usr/lib/ccache:${PATH}"
+
+EXTRAPACKAGES="${EXTRAPACKAGES} ccache pbuilder devscripts gnupg patchutils vim-tiny"
+BINDMOUNTS="${BINDMOUNTS} ${CCACHE_DIR}"
+
+MIRRORSITE=http://tw.archive.ubuntu.com/ubuntu/
+COMPONENTS="main restricted universe multiverse"
+DISTRIBUTION=lucid
+BASEPATH=/var/cache/pbuilder/lucid.cow
+
+#OTHERMIRROR="deb http://tw.archive.ubuntu.com/ubuntu/ lucid-security main restricted universe multiverse|deb http://tw.archive.ubuntu.com/ubuntu/ lucid-updates main restricted universe multiverse|deb http://tw.archive.ubuntu.com/ubuntu/ lucid-proposed main restricted universe multiverse|deb http://tw.archive.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse"
+
+PDEBUILD_PBUILDER=cowbuilder
+#export DEB_BUILD_OPTIONS="nostrip"
+
+BUILDRESULT=~/pbuilder/deb/
