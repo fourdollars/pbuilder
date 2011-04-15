@@ -1,0 +1,17 @@
+export CCACHE_DIR="/var/cache/ccache"
+export PATH="/usr/lib/ccache:${PATH}"
+
+EXTRAPACKAGES="${EXTRAPACKAGES} ccache pbuilder devscripts gnupg patchutils vim-tiny"
+BINDMOUNTS="${BINDMOUNTS} ${CCACHE_DIR}"
+
+MIRRORSITE="http://ftp.tw.debian.org/debian/"
+COMPONENTS="main contrib non-free"
+DISTRIBUTION=sid
+BASEPATH=/var/cache/pbuilder/sid.cow
+
+#OTHERMIRROR="deb http://ftp.tw.debian.org/debian/ sid main contrib non-free|deb http://ftp.tw.debian.org/debian/ sid-updates main contrib non-free|deb http://ftp.tw.debian.org/debian/ sid-proposed-updates main contrib non-free|deb http://ftp.tw.debian.org/debian-backports sid-backports main contrib non-free|deb http://ftp.tw.debian.org/debian-multimedia sid main non-free"
+
+PDEBUILD_PBUILDER=cowbuilder
+#export DEB_BUILD_OPTIONS="nostrip"
+
+BUILDRESULT=~/pbuilder/deb/
